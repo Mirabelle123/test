@@ -1,0 +1,208 @@
+﻿<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+	<meta charset="UTF-8">
+	<title>月历</title>
+	<style type="text/css">
+		body{
+			margin: 0;
+			padding: 0;
+			font-family: FangSong_GB2312;
+		}
+		ul,li{
+			list-style: none;
+			margin: 0;
+			padding: 0;
+		}
+		.box{
+			margin: 50px auto;
+			width: 700px;
+			height: 400px;
+			border-radius: 5%;
+			background:url(img/timg.gif);
+			/*background-color: #FBE0FA;*/	
+		}
+		#jan{
+			float: left;
+			margin-top: 50px;
+			padding: 0;
+			width: 300px;
+			height: 332px;
+			margin-left: 25px;
+		}
+		#jan ul li{
+			float: left;
+			width: 60px;
+			height: 70px;
+			border-radius: 5%;
+			display: inline-block;
+			background-color: rgba(220,250,170,0.5);
+			margin-top: 20px;
+			margin-left: 8px;
+		}
+		#jr{
+			float: left;
+			width: 300px;
+			height: 140px;
+			margin-left: 20px;
+			border-radius: 5%;
+			background-color:rgba(200,200,200,0.5);
+			margin-top: 150px;
+		}
+		#ja li:hover{
+			cursor: pointer;
+		}
+		#jan ul li.active {
+            background-color:rgba(200,200,200,0.6);
+        }
+		#jan ul li div{
+			font-size: 20px;
+			margin-top: 8px;
+			text-align: center;
+		}
+		#jr div{
+			display: none;
+		}	
+		h3{
+			font-size: 20px;
+			text-align: center;
+		}
+		p{
+			text-align: center;
+			font-size: 15px;
+		}
+		marquee{
+			font-size: 20px;
+			font-weight: bold;
+		}										
+	</style>
+</head>
+<body>
+	<div class="box">
+    <div id="jan">
+    	<marquee behavior="alternate" onMouseOut="this.start()" onMouseOver="this.stop()">2018月历</marquee>
+        <ul id="ja">
+            <li class="active">
+                <div>1
+                    <br>Jan</div>
+            </li>
+            <li>
+                <div>2
+                    <br>Feb</div>
+            </li>
+            <li>
+                <div>3
+                    <br>Mar</div>
+            </li>
+            <li>
+                <div>4
+                    <br>Apr</div>
+            </li>
+            <li>
+                <div>5
+                    <br>May</div>
+            </li>
+            <li>
+                <div>6
+                    <br>Jun</div>
+            </li>
+            <li>
+                <div>7
+                    <br>Jul</div>
+            </li>
+            <li>
+                <div>8
+                    <br>Aug</div>
+            </li>
+            <li>
+                <div>9
+                    <br>Sep</div>
+            </li>
+            <li>
+                <div>10
+                    <br>Oct</div>
+            </li>
+            <li>
+                <div>11
+                    <br>Nov</div>
+            </li>
+            <li>
+                <div>12
+                    <br>Dec</div>
+            </li>
+        </ul>
+    </div>
+    <div id="jr">
+        <div style="display: block;">
+            <h3>1月节日</h3>
+            <p>元旦：1月1日至1月3日放假三天</p>
+        </div>
+        <div>
+            <h3>2月节日</h3>
+            <p>春节：2月15日至2月21日放假七天</p>
+        </div>
+        <div>
+            <h3>3月节日</h3>
+            <p>植树节：没有假期的一个月</p>
+        </div>
+        <div>
+            <h3>4月节日</h3>
+            <p>愚人节：4月1日今天你被恶搞了吗？</p>
+        </div>
+        <div>
+            <h3>5月节日</h3>
+            <p>青年节：5月4日放假半天</p>
+        </div>
+        <div>
+            <h3>6月节日</h3>
+            <p>儿童节：6月1日</p>
+        </div>
+        <div>
+            <h3>7月节日</h3>
+            <p>暑假：全是假期</p>
+        </div>
+        <div>
+            <h3>8月节日</h3>
+            <p>暑假：全是假期</p>
+        </div>
+        <div>
+            <h3>9月节日</h3>
+            <p>开学：9月10日开学大吉</p>
+        </div>
+        <div>
+            <h3>10月节日</h3>
+            <p>国庆节：10月1日至10月7日放假七天</p>
+        </div>
+        <div>
+            <h3>11月节日</h3>
+            <p>双十一：11月11日光棍节，宜剁手</p>
+        </div>
+        <div>
+            <h3>12月节日</h3>
+            <p>圣诞节：12月25日</p>
+        </div>
+    </div>
+</div>
+<div style="margin-left: 400px;"><a href="index.html">返回首页</a></div>
+	<script type="text/javascript">
+		window.onload=function(){
+			var a=document.getElementById("ja");
+			var ondo=a.getElementsByTagName("li");
+			var b=document.getElementById("jr");
+			var ondoit=b.getElementsByTagName("div");
+			for(var i=0;i<ondo.length;i++){
+				ondo[i].index=i;
+				ondo[i].onmouseover=function(){
+					for(var j=0;j<ondoit.length;j++){
+						ondoit[j].style.display="none";
+						ondo[j].className="";
+					}
+					ondoit[this.index].style.display="block";
+					this.className="active";
+				}
+			}
+		}
+
+	</script>
+</body>
+</html>

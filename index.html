@@ -1,133 +1,41 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="zh-cn">
-
 <head>
-    <meta charset="UTF-8">
-    <title>网易严选 - 以严谨的态度，为中国消费者甄选天下优品</title>
-    <meta name="keywords" content="网易严选,严选,电子商务,网购,居家,厨房,饮食,甄选家,有态度,一流制造商,匠心打造,源头把控,绿色,安全,舒适,健康,品质,严格甄选,出口品质">
-    <meta name="description" content="网易严选秉承网易一贯的严谨态度，深入世界各地，严格把关所有商品的产地、工艺、原材料，甄选居家、厨房、饮食等各类商品，力求给你最优质的商品。">
-    <meta content="yes" name="apple-mobile-web-app-capable">
-    <meta content="yes" name="apple-touch-fullscreen">
-    <meta content="telephone=no,email=no" name="format-detection">
-    <meta name="screen-orientation" content="portrait">
-    <meta name="x5-orientation" content="portrait">
-    <link rel="stylesheet" type="text/css" href="page.css">
-   <script type="text/javascript">
-//引入该flexible.min.js
-! function(e, t) {
-    function n() { var n = l.getBoundingClientRect().width;
-        t = t || 540, n > t && (n = t); var i = 100 * n / e;
-        r.innerHTML = "html{font-size:" + i + "px;}" } var i, d = document,
-        o = window,
-        l = d.documentElement,
-        r = document.createElement("style"); if (l.firstElementChild) l.firstElementChild.appendChild(r);
-    else { var a = d.createElement("div");
-        a.appendChild(r), d.write(a.innerHTML), a = null } n(), o.addEventListener("resize", function() { clearTimeout(i), i = setTimeout(n, 300) }, !1), o.addEventListener("pageshow", function(e) { e.persisted && (clearTimeout(i), i = setTimeout(n, 300)) }, !1), "complete" === d.readyState ? d.body.style.fontSize = "16px" : d.addEventListener("DOMContentLoaded", function(e) { d.body.style.fontSize = "16px" }, !1) }(750, 750);
-</script>
-<script type="text/javascript" src="js/xxk.js"></script>
+	<meta charset="UTF-8">
+	<title>我的JS练习作品</title>
+	<style type="text/css">
+		body{
+			width: 500px;
+			margin: 0 auto;
+		}
+		ul,ol,li{
+			list-style:none;
+			color: #666;
+			font-size: 25px;
+		}
+        a{
+        	text-decoration:none;
+        	color: #666;
+        }
+        a:hover{
+        	color: #999;
+        }
+        .main{
+        	margin-top: 100px;
+        }
+	</style>
 </head>
-
 <body>
-   <div class="g-bd">
-    <div class="j-bd">
-        <div class="hdWraper1" style="height: 1.5rem;">
-            <div class="hd1">
-                <div class="index-logo">
-                    <a class="logo" href="#"><img src="img/logo.png" height="200%" width="200%"></a>
-                </div>
-                <div class="search">
-                    <i class="icon"></i>
-                    <input type="search" class="placehoder" name="" placeholder="搜索商品，共11163款好物">
-                </div>
-            </div>
-        </div>
-        <div class="g_box" id="g_box">
-            <div class="wrapper" id="wrapper">
-                <div class="scroller">
-                    <ul class="clearfix">
-                        <li><div class=newsearchinsider id=v1 onClick="javascript:doClick(this)"><a href="javascript:void(0)">推荐</a></div></li>
-                        <li><div class=newsearchinsider id=v2 onClick="javascript:doClick(this)"><a href="javascript:void(0)">居家</a></div></li>
-                        <li><div class=newsearchinsider id=v3 onClick="javascript:doClick(this)"><a href="javascript:void(0)">鞋包配饰</a></div></li>
-                        <li><div class=newsearchinsider id=v4 onClick="javascript:doClick(this)"><a href="javascript:void(0)">服装</a></div></li>
-                        <li><div class=newsearchinsider id=v5 onClick="javascript:doClick(this)"><a href="javascript:void(0)">电器</a></div></li>
-                        <li><div class=newsearchinsider id=v6 onClick="javascript:doClick(this)"><a href="javascript:void(0)">洗护</a></div></li>
-                        <li><div class=newsearchinsider id=v7 onClick="javascript:doClick(this)"><a href="javascript:void(0)">饮食</a></div></li>
-                        <li><div class=newsearchinsider id=v8 onClick="javascript:doClick(this)"><a href="javascript:void(0)">餐厨</a></div></li>
-                        <li><div class=newsearchinsider id=v9 onClick="javascript:doClick(this)"><a href="javascript:void(0)">婴童</a></div></li>
-                        <li><div class=newsearchinsider id=v10 onClick="javascript:doClick(this)"><a href="javascript:void(0)">文体</a></div></li>
-                        <li><div class=newsearchinsider id=v11 onClick="javascript:doClick(this)"><a href="javascript:void(0)">特色区</a></div></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="hdWraper2">
-                <div id="e1">
-                <div class="lb">
-                    <div class="lb_img">
-                        <img src="img/8.jpg">
-                        <img src="img/1.jpg">
-                        <img src="img/2.jpg">
-                        <img src="img/3.jpg">
-                        <img src="img/4.jpg">
-                        <img src="img/5.jpg">
-                        <img src="img/6.jpg">
-                        <img src="img/7.jpg">
-                        <img src="img/8.jpg">
-                        <img src="img/1.jpg">
-                    </div>
-                    <ul>
-                        <li class="active"></li>
-                        <li></li>
-                        <li></li>
-                        <li></li>
-                        <li></li>
-                        <li></li>
-                        <li></li>
-                        <li></li>
-                    </ul>
-                </div>
-                <div class="servicePolicy">
-                    <ul>
-                        <li>
-                            <i class="service"></i>
-                            <span class="policy">网易自营品牌</span>
-                        </li>
-                        <li>
-                            <i class="service"></i>
-                            <span class="policy">30天无忧退货</span>
-                        </li>
-                        <li>
-                            <i class="service"></i>
-                            <span class="policy">48小时快速退款</span>
-                        </li>
-                    </ul>
-                </div>
-                </div>
-                <div id="e2"><img src="img/e2.jpg"></div>
-                <div id="e3"><img src="img/e3.jpg"></div>
-                <div id="e4"><img src="img/e4.jpg"></div>
-                <div id="e5"><img src="img/e5.jpg"></div>
-                <div id="e6"><img src="img/e6.jpg"></div>
-                <div id="e7"><img src="img/e7.jpg"></div>
-                <div id="e8"><img src="img/e8.jpg"></div>
-                <div id="e9"><img src="img/e9.jpg"></div>
-                <div id="e10"><img src="img/e10.jpg"></div>
-                <div id="e11"><img src="img/e11.jpg"></div>
-            </div>
-        </div>
-    </div>
-</div>
-</div>
-</div>
-    <script type="text/javascript" src="js/lb.js"></script>
-    <script type="text/javascript" src="js/jquery.min.js"></script>
-    <script type="text/javascript" src="js/flexible.js"></script>
-    <script type="text/javascript" src="js/iscroll.js"></script>
-    <script type="text/javascript" src="js/navbarscroll.js"></script>
-    <script type="text/javascript">
-    $(function() {
-        $('.wrapper').navbarscroll();
-
-    });
-    </script>
+	<div class="main">
+		<ul>
+			<li style="color:black; font-size: 30px; font-weight: bold;">我的练习小demo</li>
+			<li><a href="calendar_3.html">js月历卡</a></li>
+			<li><a href="stopwatch.html">js秒表</a></li>
+			<li><a href="jq_xm.html">jq小米头部轮播图模仿</a></li>
+                        <li><a href="vuetest.html">vue点赞</a></li>
+			<li><a href="yanxuan.html">移动端网易严选头部的模仿</a></li>
+			<li>更新中……</li>
+		</ul>
+	</div>
 </body>
 </html>

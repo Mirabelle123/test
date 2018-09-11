@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<style type="text/css">
+    body{
+        margin: 0;
+        padding: 0;
+    }
+    .box{
+        width: 400px;
+        height: 500px;
+        background-color: #c9e8fc;
+        margin: 0 auto;
+        margin-top: 20px;
+        border-radius: 10%
+    }
+    .time{
+        padding-top: 20px;
+        padding-left: 100px;
+    }
+    .time input{
+        font-size: 30px;
+        width: 180px;
+        color: #254787;
+        bo
+    }
+    .but1,.but2{
+        padding-top: 10px;
+        padding-left: 150px;
+    }
+    .but1 button,.but2 button{
+        width: 50px;
+        height: 30px;
+        font-size: 15px;
+        font-weight: bold;
+        color: #254787;
+        background: #b9def8;
+    }
+    .count{
+        padding-top: 10px;
+        padding-left: 50px;
+
+    }
+    .count textarea{
+        width: 300px;
+        height: 250px;
+        text-align: center;
+        font-size: 20px;
+        background:#c4e7fb ;
+        color: #254787;
+    }
+    #but2{
+        display: none;
+    }
+    #but1{
+        display: block;
+    }
+
+</style>
+<script type="text/javascript" >
+     var hour,minute,second;//时 分 秒
+ hour=minute=second=0;//初始化     
+ var msecond=0;//毫秒     
+ var int; 
+function countTime(){
+  msecond=msecond+50;
+  if(msecond>=1000){
+    msecond=0;
+    second=second+1;
+  }
+    if(second>=60){
+        second=0;
+        minute=minute+1;
+    }
+        if(minute>=60){
+            minute=0;
+            hour=hour+1;
+        } 
+        document.getElementById('timetext').value=(todo(hour)+":"+todo(minute)+":"+todo(second)+":"+todo1(msecond));
+}
+function start(){ 
+    clearInterval(int);
+ int=setInterval(countTime, 50);
+}
+function stop(){
+clearInterval(int);
+}
+function count(){
+    var str;
+    str=todo(hour)+":"+todo(minute)+":"+todo(second)+":"+todo1(msecond);
+document.getElementById('counttext').value=(document.getElementById('counttext').value+'\n'+"计次："+str);
+}
+function reset(){
+clearInterval(int);
+hour=minute=second=msecond=0;
+document.getElementById('timetext').value=("00:00:00:000");
+document.getElementById('counttext').value=("");
+}
+function todo(n){
+    if(n<10){
+        return "0"+n;
+    }else{
+        return n;
+    }
+}
+function todo1(n){
+    if(n<10){
+        return "00"+n;
+    }else if(n<100){
+        return "0"+n;
+    }else{
+        return n;
+    }
+}
+function change1(){
+    var b1=document.getElementById("but1");
+    var b2=document.getElementById("but2");
+    b1.style.display="none";
+    b2.style.display="block";
+
+}
+function change2(){
+    var b1=document.getElementById("but1");
+    var b2=document.getElementById("but2");
+    b2.style.display="none";
+    b1.style.display="block";
+}
+</script>
+<body>
+    <div class="box">
+        <div class="time">
+            <h2 style="margin-left: 60px;color: #254787;">秒表</h3>
+            <input type="text" id="timetext" value="00:00:00:000">
+        </div>
+        <div class="but1" id="but1">
+            <button onclick="start();change1()">开始</button>
+            <button onclick="reset()">重置</button>
+        </div>
+        <div class="but2" id="but2">
+            <button onclick="count()">计次</button>
+            <button onclick="stop();change2()">暂停</button>
+        </div>
+        <div class="count">
+            <textarea id="counttext" value="" ></textarea>
+        </div>
+    </div>
+    <div style="margin-left: 400px;"><a href="index.html">返回首页</a></div>
+</body>
+</html>

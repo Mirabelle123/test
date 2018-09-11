@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>xiaomi</title>
+</head>
+<script type="text/javascript" src="js/jquery-3.js"></script>
+<style type="text/css">
+	body{
+		margin: 0;
+		padding: 0
+	}
+	ul,li{
+		list-style: none;
+		margin: 0;
+		padding: 0
+	}
+	img{
+		display: block;
+	}
+	a{
+		text-decoration: none;
+	}
+	.box{
+		width: 1226px;
+		height: 460px;
+		margin-top: 50px;
+		overflow: hidden;
+		margin-left: 30px;
+		position: relative;
+	}
+	.box:hover{
+		cursor: pointer;
+	}
+	.lb{
+		width: 1226px;
+		height: 460px;
+		position: absolute;
+	}
+	.imgWrap{
+		position: absolute;
+		z-index: 1;
+	}
+	.imgWrap li{
+		float: left;
+	}
+	.imgIcon{
+		margin-left: 1000px;
+		margin-top: 400px;
+		overflow: hidden;
+		position: absolute;
+		z-index: 2;
+	}
+	.imgIcon li{
+		background-color: rgba(133,133,133,0.2);
+		width: 5px;
+		height: 5px;
+		margin-left: 10px;
+		border-radius: 50%;
+		float: left;
+		border: 2px solid #a9a9a9;
+	}
+	.imgIcon li:hover{
+		background-color: #ebebeb;
+	}
+	.imgIcon .active{
+		background-color: #ebebeb;		
+	}
+	.pre{
+		width: 40px;
+		height: 70px;
+		border-radius: 5%;
+		float: left;
+		font-size: 50px;
+		text-align: center; 
+		line-height: 70px;
+		margin-left: 234px;
+		margin-top: 200px;
+		position: absolute;
+		z-index: 2;
+		color:#d1d1d1;
+	}
+	.next{
+		width: 40px;
+		height: 70px;
+		border-radius: 5%;
+		font-size: 50px;
+		text-align: center; 
+		line-height: 70px;
+		margin-left: 1186px;
+		margin-top: 200px;
+		position: absolute;
+		z-index: 2;
+		color: #d1d1d1;
+	}
+	.lb span:hover{
+		background-color: #595959;
+	}
+	.menu{
+		position: absolute;
+		z-index: 3;
+		width: 234px;
+		height: 460px;
+		color:#fbfbfb;
+		background-color: rgba(89,89,89,0.6);
+	}
+	.menu .nav{
+		width: 234px;
+		height: 420px;
+		margin-top: 20px;
+	}
+	.menu .nav li{
+		width: 234px;
+		height: 42px;
+		display: inline-block;
+	}
+	.menu .nav li:hover{
+		background-color: #ff6700;
+	}
+	.menu .nav .onn{
+		background-color: #ff6700;
+	}
+	.menu .nav li a{
+		font-size: 15px;
+		font-family: "微软雅黑";
+		margin-left: 20px;
+		line-height: 42px;
+	}
+	.menu .nav li span{
+		width: 20px;
+		height: 42px;
+		font-size: 18px;
+		font-weight: bold;
+		line-height: 42px;
+		display: block;
+		float: right;
+		padding-right: 20px;
+		}
+		.content{
+			position: absolute;
+			z-index: 2;
+			height: 460px;
+			width: 992px;
+			padding-left: 234px;
+			padding-top: 0px;
+		}
+		.content table{
+			margin: 0;
+			padding: 0;
+			display: none;
+			border-collapse: collapse;
+		}
+		.content table tr{
+		 height:77px;	
+		}
+		.content tr td{
+			width: 248px;
+			background: white;
+		}
+		.content tr td img{
+			width: 20px;
+			height: 28px;
+		}
+		.content tr td span{
+			float: left;
+		}
+		.content tr td a{
+			font-size: 15px;
+		    font-family: "微软雅黑";
+		    color: black;
+		    padding-left: 10px;
+		}
+		.content table a:hover{
+			color:#ff6700;
+		}
+		.content .on{
+			display: block;
+		}
+</style>
+<body>
+	<div class="box">
+		<div class="lb">
+			<span class="pre active"><</span>
+			<ul class="imgWrap">			
+				<li>
+					<img src="img/xm1.jpg" height="460" width="1226">
+				</li>
+				<li>
+					<img src="img/xm2.jpg" height="460" width="1226">
+				</li>
+				<li>
+					<img src="img/xm3.jpg" height="460" width="1226">
+				</li>
+				<li>
+					<img src="img/xm4.jpg" height="460" width="1226">
+				</li>
+				<li>
+					<img src="img/xm5.jpg" height="460" width="1226">
+				</li>
+				<li>
+					<img src="img/xm6.jpg" height="460" width="1226">
+				</li>
+				<li>
+					<img src="img/xm1.jpg" height="460" width="1226">
+				</li>
+			</ul>
+			<ul class="imgIcon">
+				<li class="active"></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+			</ul>
+			<span class="next active">></span>
+		</div>
+		<div class="menu">
+			<ul class="nav">
+				<li>
+					<a>手机 电话卡</a>
+					<span>></span>
+				</li>
+				<li>
+					<a>电视 盒子</a>
+					<span>></span>
+				</li>
+				<li>
+					<a>笔记本 平板</a>
+					<span>></span>
+				</li>
+				<li>
+					<a>家电 插线板</a>
+					<span>></span>
+				</li>
+				<li>
+					<a>出行 穿戴</a>
+					<span>></span>
+				</li>
+				<li>
+					<a>智能 路由器</a>
+					<span>></span>
+				</li>
+				<li>
+					<a>电源 配件</a>
+					<span>></span>
+				</li>
+				<li>
+					<a>个护 儿童</a>
+					<span>></span>
+				</li>
+				<li>
+					<a>耳机 音箱</a>
+					<span>></span>
+				</li>
+				<li>
+					<a>生活 包箱</a>
+					<span>></span>
+				</li>
+			</ul>
+		</div>
+		<div class="content">
+				<table>
+					<tr>
+						<td><span><img src="img/0.png"></span><a href="#">小米</a></td>
+						<td><span><img src="img/0.png"></span><a href="#">小米</a></td>
+						<td><span><img src="img/0.png"></span><a href="#">小米</a></td>
+						<td><span><img src="img/0.png"></span><a href="#">小米</a></td>
+					</tr>
+					<tr>
+						<td><span><img src="img/0.png"></span><a href="#">小米</a></td>
+						<td><span><img src="img/0.png"></span><a href="#">小米</a></td>
+						<td><span><img src="img/0.png"></span><a href="#">小米</a></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td><span><img src="img/0.png"></span><a href="#">小米</a></td>
+						<td><span><img src="img/0.png"></span><a href="#">小米</a></td>
+						<td><span><img src="img/0.png"></span><a href="#">小米</a></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td><span><img src="img/0.png"></span><a href="#">小米</a></td>
+						<td><span><img src="img/0.png"></span><a href="#">小米</a></td>
+						<td><span><img src="img/0.png"></span><a href="#">小米</a></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td><span><img src="img/0.png"></span><a href="#">小米</a></td>
+						<td><span><img src="img/0.png"></span><a href="#">小米</a></td>
+						<td><span><img src="img/0.png"></span><a href="#">小米</a></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td><span><img src="img/0.png"></span><a href="#">小米</a></td>
+						<td><span><img src="img/0.png"></span><a href="#">小米</a></td>
+						<td><span><img src="img/0.png"></span><a href="#">小米</a></td>
+						<td></td>
+					</tr>
+				</table>
+				<table>
+					<tr>
+						<td><span><img src="img/0.png"></span><a href="#">小米</a></td>
+						<td><span><img src="img/0.png"></span><a href="#">小米</a></td>
+						<td><span><img src="img/0.png"></span><a href="#">小米</a></td>
+						<td><span><img src="img/0.png"></span><a href="#">小米</a></td>
+					</tr>
+					<tr>
+						<td><span><img src="img/0.png"></span><a href="#">小米</a></td>
+						<td><span><img src="img/0.png"></span><a href="#">小米</a></td>
+						<td><span><img src="img/0.png"></span><a href="#">小米</a></td>
+						<td><span><img src="img/0.png"></span><a href="#">小米</a></td>
+					</tr>
+					<tr>
+						<td><span><img src="img/0.png"></span><a href="#">小米</a></td>
+						<td><span><img src="img/0.png"></span><a href="#">小米</a></td>
+						<td><span><img src="img/0.png"></span><a href="#">小米</a></td>
+						<td><span><img src="img/0.png"></span><a href="#">小米</a></td>
+					</tr>
+					<tr>
+						<td><span><img src="img/0.png"></span><a href="#">小米</a></td>
+						<td><span><img src="img/0.png"></span><a href="#">小米</a></td>
+						<td><span><img src="img/0.png"></span><a href="#">小米</a></td>
+						<td><span><img src="img/0.png"></span><a href="#">小米</a></td>
+					</tr>
+					<tr>
+						<td><span><img src="img/0.png"></span><a href="#">小米</a></td>
+						<td><span><img src="img/0.png"></span><a href="#">小米</a></td>
+						<td><span><img src="img/0.png"></span><a href="#">小米</a></td>
+						<td><span><img src="img/0.png"></span><a href="#">小米</a></td>
+					</tr>
+					<tr>
+						<td><span><img src="img/0.png"></span><a href="#">小米</a></td>
+						<td><span><img src="img/0.png"></span><a href="#">小米</a></td>
+						<td><span><img src="img/0.png"></span><a href="#">小米</a></td>
+						<td><span><img src="img/0.png"></span><a href="#">小米</a></td>
+					</tr>
+				</table>
+				<table>
+					<tr>
+						<td><span><img src="img/0.png"></span><a href="#">小米</a></td>
+					</tr>
+					<tr>
+						<td><span><img src="img/0.png"></span><a href="#">小米</a></td>
+					</tr>
+					<tr>
+						<td><span><img src="img/0.png"></span><a href="#">小米</a></td>
+					</tr>
+					<tr>
+						<td><span><img src="img/0.png"></span><a href="#">小米</a></td>
+					</tr>
+					<tr>
+						<td><span><img src="img/0.png"></span><a href="#">小米</a></td>
+					</tr>
+					<tr>
+						<td><span><img src="img/0.png"></span><a href="#">小米</a></td>
+					</tr>
+				</table>
+				<table>
+					<tr>
+						<td><span><img src="img/0.png"></span><a href="#">小米</a></td>
+						<td><span><img src="img/0.png"></span><a href="#">小米</a></td>
+					</tr>
+					<tr>
+						<td><span><img src="img/0.png"></span><a href="#">小米</a></td>
+						<td><span><img src="img/0.png"></span><a href="#">小米</a></td>
+					</tr>
+					<tr>
+						<td><span><img src="img/0.png"></span><a href="#">小米</a></td>
+						<td><span><img src="img/0.png"></span><a href="#">小米</a></td>
+					</tr>
+					<tr>
+						<td><span><img src="img/0.png"></span><a href="#">小米</a></td>
+						<td><span><img src="img/0.png"></span><a href="#">小米</a></td>
+					</tr>
+					<tr>
+						<td><span><img src="img/0.png"></span><a href="#">小米</a></td>
+						<td><span><img src="img/0.png"></span><a href="#">小米</a></td>
+					</tr>
+					<tr>
+						<td><span><img src="img/0.png"></span><a href="#">小米</a></td>
+						<td><span><img src="img/0.png"></span><a href="#">小米</a></td>
+					</tr>
+				</table>
+				<table>
+					<tr>
+						<td><span><img src="img/0.png"></span><a href="#">小米</a></td>
+					</tr>
+					<tr>
+						<td><span><img src="img/0.png"></span><a href="#">小米</a></td>
+					</tr>
+					<tr>
+						<td><span><img src="img/0.png"></span><a href="#">小米</a></td>
+					</tr>
+					<tr>
+						<td><span><img src="img/0.png"></span><a href="#">小米</a></td>
+					</tr>
+					<tr>
+						<td><span><img src="img/0.png"></span><a href="#">小米</a></td>
+					</tr>
+					<tr>
+						<td><span><img src="img/0.png"></span><a href="#">小米</a></td>
+					</tr>
+				</table>
+				<table>
+					<tr>
+						<td><span><img src="img/0.png"></span><a href="#">小米</a></td>
+						<td><span><img src="img/0.png"></span><a href="#">小米</a></td>
+						<td><span><img src="img/0.png"></span><a href="#">小米</a></td>
+						<td><span><img src="img/0.png"></span><a href="#">小米</a></td>
+					</tr>
+					<tr>
+						<td><span><img src="img/0.png"></span><a href="#">小米</a></td>
+						<td><span><img src="img/0.png"></span><a href="#">小米</a></td>
+						<td><span><img src="img/0.png"></span><a href="#">小米</a></td>
+					</tr>
+					<tr>
+						<td><span><img src="img/0.png"></span><a href="#">小米</a></td>
+						<td><span><img src="img/0.png"></span><a href="#">小米</a></td>
+						<td><span><img src="img/0.png"></span><a href="#">小米</a></td>
+					</tr>
+					<tr>
+						<td><span><img src="img/0.png"></span><a href="#">小米</a></td>
+						<td><span><img src="img/0.png"></span><a href="#">小米</a></td>
+						<td><span><img src="img/0.png"></span><a href="#">小米</a></td>
+					</tr>
+					<tr>
+						<td><span><img src="img/0.png"></span><a href="#">小米</a></td>
+						<td><span><img src="img/0.png"></span><a href="#">小米</a></td>
+						<td><span><img src="img/0.png"></span><a href="#">小米</a></td>
+					</tr>
+					<tr>
+						<td><span><img src="img/0.png"></span><a href="#">小米</a></td>
+						<td><span><img src="img/0.png"></span><a href="#">小米</a></td>
+						<td><span><img src="img/0.png"></span><a href="#">小米</a></td>
+					</tr>
+				</table>
+				<table>
+					<tr>
+						<td><span><img src="img/0.png"></span><a href="#">小米</a></td>
+						<td><span><img src="img/0.png"></span><a href="#">小米</a></td>
+						<td><span><img src="img/0.png"></span><a href="#">小米</a></td>
+						<td><span><img src="img/0.png"></span><a href="#">小米</a></td>
+					</tr>
+					<tr>
+						<td><span><img src="img/0.png"></span><a href="#">小米</a></td>
+						<td><span><img src="img/0.png"></span><a href="#">小米</a></td>
+						<td><span><img src="img/0.png"></span><a href="#">小米</a></td>
+						<td><span><img src="img/0.png"></span><a href="#">小米</a></td>
+					</tr>
+					<tr>
+						<td><span><img src="img/0.png"></span><a href="#">小米</a></td>
+						<td><span><img src="img/0.png"></span><a href="#">小米</a></td>
+						<td><span><img src="img/0.png"></span><a href="#">小米</a></td>
+						<td><span><img src="img/0.png"></span><a href="#">小米</a></td>
+					</tr>
+					<tr>
+						<td><span><img src="img/0.png"></span><a href="#">小米</a></td>
+						<td><span><img src="img/0.png"></span><a href="#">小米</a></td>
+						<td><span><img src="img/0.png"></span><a href="#">小米</a></td>
+						<td><span><img src="img/0.png"></span><a href="#">小米</a></td>
+					</tr>
+					<tr>
+						<td><span><img src="img/0.png"></span><a href="#">小米</a></td>
+						<td><span><img src="img/0.png"></span><a href="#">小米</a></td>
+						<td><span><img src="img/0.png"></span><a href="#">小米</a></td>
+						<td><span><img src="img/0.png"></span><a href="#">小米</a></td>
+					</tr>
+					<tr>
+						<td><span><img src="img/0.png"></span><a href="#">小米</a></td>
+						<td><span><img src="img/0.png"></span><a href="#">小米</a></td>
+						<td><span><img src="img/0.png"></span><a href="#">小米</a></td>
+						<td><span><img src="img/0.png"></span><a href="#">小米</a></td>
+					</tr>
+				</table>
+				<table>
+					<tr>
+						<td><span><img src="img/0.png"></span><a href="#">小米</a></td>
+					</tr>
+					<tr>
+						<td><span><img src="img/0.png"></span><a href="#">小米</a></td>
+					</tr>
+					<tr>
+						<td><span><img src="img/0.png"></span><a href="#">小米</a></td>
+					</tr>
+					<tr>
+						<td><span><img src="img/0.png"></span><a href="#">小米</a></td>
+					</tr>
+					<tr>
+						<td><span><img src="img/0.png"></span><a href="#">小米</a></td>
+					</tr>
+					<tr>
+						<td><span><img src="img/0.png"></span><a href="#">小米</a></td>
+					</tr>
+				</table>
+				<table>
+					<tr>
+						<td><span><img src="img/0.png"></span><a href="#">小米</a></td>
+						<td><span><img src="img/0.png"></span><a href="#">小米</a></td>
+					</tr>
+					<tr>
+						<td><span><img src="img/0.png"></span><a href="#">小米</a></td>
+						<td><span><img src="img/0.png"></span><a href="#">小米</a></td>
+					</tr>
+					<tr>
+						<td><span><img src="img/0.png"></span><a href="#">小米</a></td>
+						<td><span><img src="img/0.png"></span><a href="#">小米</a></td>
+					</tr>
+					<tr>
+						<td><span><img src="img/0.png"></span><a href="#">小米</a></td>
+						<td><span><img src="img/0.png"></span><a href="#">小米</a></td>
+					</tr>
+					<tr>
+						<td><span><img src="img/0.png"></span><a href="#">小米</a></td>
+						<td><span><img src="img/0.png"></span><a href="#">小米</a></td>
+					</tr>
+					<tr>
+						<td><span><img src="img/0.png"></span><a href="#">小米</a></td>
+						<td><span><img src="img/0.png"></span><a href="#">小米</a></td>
+					</tr>
+				</table>
+				<table>
+					<tr>
+						<td><span><img src="img/0.png"></span><a href="#">小米</a></td>
+					</tr>
+					<tr>
+						<td><span><img src="img/0.png"></span><a href="#">小米</a></td>
+					</tr>
+					<tr>
+						<td><span><img src="img/0.png"></span><a href="#">小米</a></td>
+					</tr>
+					<tr>
+						<td><span><img src="img/0.png"></span><a href="#">小米</a></td>
+					</tr>
+					<tr>
+						<td><span><img src="img/0.png"></span><a href="#">小米</a></td>
+					</tr>
+					<tr>
+						<td><span><img src="img/0.png"></span><a href="#">小米</a></td>
+					</tr>
+				</table>
+			</div>
+	</div>
+	<div style="margin-left: 400px;"><a href="index.html">返回首页</a></div>
+	<script type="text/javascript">
+			var i=0;
+			var li_width=$('.lb .imgWrap li').width();
+			var li_length=$('.lb .imgWrap li').length;
+			$('.imgWrap').css('width',li_width*li_length);
+			function move(){
+				 if (i == li_length) {
+                $('.lb .imgWrap').css({left: 0});
+                i = 1;
+            }
+            if (i == -1) {
+                $('.lb .imgWrap').css({left: -(li_length-1) * li_width });
+                i = li_length - 2;
+            }
+            $('.lb .imgWrap').css({ left: -i * li_width });
+
+            if (i == li_length - 1) {
+                $('.lb .imgIcon li').eq(0).addClass("active").siblings().removeClass("active");
+            } else {
+                $('.lb .imgIcon li').eq(i).addClass("active").siblings().removeClass("active");
+            }
+			}
+			var int=setInterval(function () {  
+            i++;
+            move();
+            },3000);
+            $('.pre').click(function(){  
+            	i--;
+            	move();
+            });
+            $('.next').click(function(){ 
+            	i++;
+            	move();
+            });
+            $('.lb .imgIcon li').click(function(){
+            	var index=$(this).index();
+            	i=index;
+            	$('.lb .imgWrap').css({ left: -i * li_width });
+            	$('.lb .imgIcon li').eq(i).addClass("active").siblings().removeClass("active");
+            });
+            $('.lb').hover(function () {
+            clearInterval(int);
+        }, function () {
+            int = setInterval(function () {
+                i++;
+                move();
+                }, 3000);
+            });
+	</script>
+	<script type="text/javascript">
+		var li_len=$('.menu .nav li').length;
+		var table_len=$('.content table').length;
+		var j=0;
+		$('.menu .nav li,.content table').hover(function(){
+			var index=$(this).index();
+			j=index;
+			$('.content').show();
+		    $('.content table').eq(j).addClass("on").siblings().removeClass("on");
+		    $('.menu .nav li').eq(j).addClass("onn").siblings().removeClass("onn");
+		},function (){ $('.menu .nav li').removeClass("onn");$('.content table').removeClass("on");$('.content').hide();});
+	</script>
+</body>
+</html>
